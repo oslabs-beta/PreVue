@@ -1,155 +1,259 @@
 <template>
   <div class="scroll">
     <div id="splash">
-      <div id="top-elements">
-        <div @click="toHome">
-          <h4 id="prevue-link">Try PreVue</h4>
-        </div>
-        <v-btn width="200px" color="success" class="mt-4" @click="oauth">
+      <div class="nav">
+        <div @click="toHome">Try PreVue</div>
+        <div @click="oauth">
           <a id="stripStyle" href="https://github.com/open-source-labs/PreVue"
-            >Github
+            >Visit our GitHub repo
           </a>
-        </v-btn>
+        </div>
       </div>
-      <h1 id="prevue">PreVue</h1>
-      <h2>All in One Prototyping Tool For Vue Developers</h2>
-      <h3>From Component Architecture to Code Exporting</h3>
-      <br />
-      <div id="video-container">
-        <video src="../assets/PreVueDemo.mp4" muted autoplay loop></video>
+
+      <div id="header-wrapper">
+        <header id="header" class="container">
+          <div id="logo">
+            <h1>PreVue</h1>
+          </div>
+        </header>
       </div>
-      <br />
-      <p>
-        <strong>
-          PreVue allows users to conceptualize and visualize component
-          architecture by allowing them to :
-        </strong>
-      </p>
-      <ul id="prevue-features">
-        <li>Create components and preview their associated code</li>
-        <li>Set up different routes and views</li>
-        <li>Establish parent-child component relationships</li>
-        <li>View application hierarchy in tree format</li>
-        <li>
-          Export the component architecture as a Vue application created with
-          default Vite settings.
-        </li>
-      </ul>
+      <div id="banner-wrapper">
+        <div id="banner" class="box container" style="padding: 3em;">
+          <div class="row">
+            <div class="col-5 col-12-medium">
+              <h2>This is PreVue.</h2>
+              <p style="font-size: 2.4em;">
+                An All in One Prototyping Tool For Vue Developers
+              </p>
+            </div>
+            <div
+              class="col-7 col-12-medium"
+              style="padding: 1em ,0 , 0 , 0; display: flex;"
+            >
+              <div id="video-container">
+                <video
+                  src="../assets/PreVueDemo.mp4"
+                  muted
+                  autoplay
+                  loop
+                ></video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="features-wrapper"
+        style="background-color: #fdfdfdcb; width: 100%; margin-top: 2em;"
+      >
+        <div class="container">
+          <div class="row card" style="justify-content: center;">
+            <div>
+              <section class="box feature">
+                <div class="inner">
+                  <header>
+                    <h2>
+                      PreVue allows users to conceptualize and visualize
+                      component architecture by allowing them to:
+                    </h2>
+                  </header>
+                  <ul>
+                    <li>
+                      Create components and preview their associated code
+                    </li>
+                    <li>Set up different routes and views</li>
+                    <li>
+                      Establish parent-child component relationships
+                    </li>
+                    <li>
+                      View application hierarchy in tree format
+                    </li>
+                    <li>
+                      Export the component architecture as a Vue application
+                      created with default Vite settings
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <br />
       <div class="border">
         <p>
           <strong>
             Use PreVue to create projects in single sessions or sign in with
-            GitHub to save projects and update them anytime.</strong
+            GitHub to save projects and update them anytime</strong
           >
         </p>
       </div>
       <br />
       <h2>How to use:</h2>
-      <h4>Adding Components</h4>
-      <ul id="list">
-        <li>Double click on the application icon</li>
-        <li>
-          Create components by entering a name and clicking the HTML elements
-          you need
-        </li>
-        <li>Clicked elements will be shown in the right sidebar</li>
-        <li>Drag the elements to change their order</li>
-        <li>
-          Once you're satisfied, click the button to ‘add a component’ and it
-          will show up in the working area.
-        </li>
-        <li>Resize and move components to fit the design you have in mind.</li>
-      </ul>
-      <br />
-      <h4>Editing Components</h4>
-      <ul id="list">
-        <li>Double click elements to bring up the modal view</li>
-        <li>
-          Add additional elements to a component with a live preview of the
-          component code
-        </li>
-        <li>Drag elements on the right side bar to nest elements</li>
-        <li>
-          Establish parent-child component relationships via the dropdown menu
-          when creating or editing components
-        </li>
-      </ul>
-      <br />
-      <h4>Adding Routes</h4>
-      <ul id="list">
-        <li>
-          Create different routes that represent different Views for your app.
-        </li>
-        <li>
-          Any components created on a given route will be automatically saved to
-          that route
-        </li>
-        <li>
-          See a visual representation of your application’s hierarchy by
-          clicking the ‘Tree’ icon in the navigation bar
-        </li>
-      </ul>
-      <br />
-      <h4>Saving/Opening/Exporting Projects</h4>
-      <ul id="list">
-        <li>
-          If you ever need to save your current project, click the ‘Save
-          Project’ icon to save it to PreVue’s database
-        </li>
-        <li>Click ‘Open Project’ to retrieve past projects</li>
-        <li>
-          Once you're satisfied, click the export project icon to export your
-          awesome project as new Vue application!
-        </li>
-      </ul>
+      <div id="features-wrapper">
+        <div class="container">
+          <div class="row card">
+            <div class="col-6 col-12-medium">
+              <!-- Box -->
+              <section class="box feature">
+                <div class="inner">
+                  <header>
+                    <h2>Adding Components</h2>
+                  </header>
+                  <ul>
+                    <li>
+                      Create components by entering a name and clicking the HTML
+                      elements you need
+                    </li>
+                    <li>Drag the elements to change their order</li>
+                    <li>
+                      Once you're satisfied, click the button to ‘add a
+                      component’ and it will show up in the working area
+                    </li>
+                    <li>
+                      Resize and move components to fit the design you have in
+                      mind
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+            <div class="col-6 col-12-medium">
+              <!-- Box -->
+              <section class="box feature">
+                <div class="inner">
+                  <header>
+                    <h2>Editing Components</h2>
+                  </header>
+                  <ul>
+                    <li>Double click elements to bring up the modal view</li>
+                    <li>
+                      Add additional elements to a component with a live preview
+                      of the component code
+                    </li>
+                    <li>
+                      Drag elements on the right side bar to nest elements
+                    </li>
+                    <li>
+                      Establish parent-child component relationships via the
+                      dropdown menu when creating or editing components
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="row card">
+            <div class="col-6 col-12-medium">
+              <section class="box feature">
+                <div class="inner">
+                  <header>
+                    <h2>Adding Components</h2>
+                  </header>
+                  <ul>
+                    <li>
+                      Create components by entering a name and clicking the HTML
+                      elements you need
+                    </li>
+                    <li>Drag the elements to change their order</li>
+                    <li>
+                      Once you're satisfied, click the button to ‘add a
+                      component’ and it will show up in the working area
+                    </li>
+                    <li>
+                      Resize and move components to fit the design you have in
+                      mind
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+            <div class="col-6 col-12-medium">
+              <!-- Box -->
+              <section class="box feature">
+                <div class="inner">
+                  <header>
+                    <h2>Adding Routes</h2>
+                  </header>
+                  <ul>
+                    <li>
+                      Create different routes that represent different Views for
+                      your app
+                    </li>
+                    <li>
+                      Any components created on a given route will be
+                      automatically saved to that route
+                    </li>
+                    <li>
+                      See a visual representation of your application’s
+                      hierarchy by clicking the ‘Tree’ icon in the navigation
+                      bar
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
       <br />
       <div class="border">
-        <h2>PreVue 2.0 Authors</h2>
+        <h2>Meet the team</h2>
       </div>
       <br />
-      <div id="authors">
-        <div class="author">
-          <h3>Jason Boo</h3>
-          <img src="../assets/jason-photo.jpeg" />
-          <div class="links">
-            <h4><a href="https://github.com/jasonboo123">Github</a></h4>
-            <h4>
-              <a href="https://www.linkedin.com/in/jason-boo/">LinkedIn</a>
-            </h4>
-          </div>
-        </div>
-        <div class="author">
-          <h3>Robert Drake</h3>
-          <img src="../assets/robert-photo.jpeg" />
-          <div class="links">
-            <h4><a href="https://github.com/rmdrake8">Github</a></h4>
-            <h4>
-              <a href="https://www.linkedin.com/in/rmdrake8/">LinkedIn</a>
-            </h4>
-          </div>
-        </div>
-        <div class="author">
-          <h3>Sean Flynn</h3>
-          <img src="../assets/sean-photo.jpeg" />
-          <div class="links">
-            <h4><a href="http://github.com/seanflynn5">Github</a></h4>
-            <h4>
-              <a href="https://www.linkedin.com/in/sean-g-flynn/">LinkedIn</a>
-            </h4>
-          </div>
-        </div>
-        <div class="author">
-          <h3>Zach Pestaina</h3>
-          <img src="../assets/zach-photo.jpg" height="160" />
-          <div class="links">
-            <h4><a href="https://github.com/zachpestaina">Github</a></h4>
-            <h4>
-              <a href="https://www.linkedin.com/in/zachpestaina/">LinkedIn</a>
-            </h4>
+      <div id="dev-team-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-3 col-6-small">
+              <section class="dev-team box feature">
+                <h5>Jason Boo</h5>
+                <img class="author" src="../assets/jason-photo.jpeg" alt="" />
+                <div class="userlinks">
+                  <a href="https://www.linkedin.com/in/jason-boo/">LinkedIn</a>
+                  <a href="https://github.com/jasonboo123">GitHub</a>
+                </div>
+              </section>
+            </div>
+            <div class="col-3 col-6-small">
+              <section class="dev-team box feature">
+                <h5>Sean Flynn</h5>
+                <img class="author" src="../assets/sean-photo.jpeg" alt="" />
+                <div class="userlinks">
+                  <a href="https://www.linkedin.com/in/sean-g-flynn/"
+                    >LinkedIn</a
+                  >
+                  <a href="http://github.com/seanflynn5">GitHub</a>
+                </div>
+              </section>
+            </div>
+            <div class="col-3 col-6-small">
+              <section class="dev-team box feature">
+                <h5>Robert Drake</h5>
+                <img class="author" src="../assets/robert-photo.jpeg" alt="" />
+                <div class="userlinks">
+                  <a href="https://www.linkedin.com/in/rmdrake8/">LinkedIn</a>
+                  <a href="https://github.com/rmdrake8">GitHub</a>
+                </div>
+              </section>
+            </div>
+            <div class="col-3 col-6-small">
+              <section class="dev-team box feature">
+                <h5>Zach Pestaina</h5>
+                <img class="author" src="../assets/zach-photo.jpeg" alt="" />
+                <div class="userlinks">
+                  <a href="https://www.linkedin.com/in/zachpestaina/"
+                    >LinkedIn</a
+                  >
+                  <a href="https://github.com/zachpestaina">GitHub</a>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
       </div>
+
       <br />
       <h2>
         Please vist PreVue's
@@ -159,8 +263,10 @@
       <br />
       <div class="border">
         <div id="bottom-elements">
-          <div @click="toHome">
-            <h4 id="prevue-link">Try PreVue</h4>
+          <div id="copyright">
+            <ul class="menu">
+              <li>&copy; Prevue 2023. All rights reserved</li>
+            </ul>
           </div>
           <!-- <v-btn width="200px" color="white" class="mt-4" @click="oauth">
             Sign in with GitHub
@@ -211,41 +317,92 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
-
-html {
+@import url('../assets/main.css');
+/* html {
   height: 140vh;
   overflow-y: auto;
+} */
+
+.nav {
+  display: flex;
+  margin-top: 2em;
+}
+
+.menu {
+  list-style: none;
+}
+
+.userlinks {
+  display: flex;
+}
+
+.userlinks > a {
+  margin-left: 1em;
+  text-decoration: none;
+}
+.userlinks > a:visited {
+  color: inherit;
+}
+
+.nav > div {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  margin-left: 1em;
+  margin-right: 1em;
+  font-size: 1.15em;
+  color: rgb(103, 103, 103);
+}
+.nav > div:hover {
+  cursor: pointer;
+  color: black;
+}
+
+#logo:hover {
+  cursor: default;
+}
+
+.nav > div > a {
+  color: inherit;
+}
+
+.nav > div > a:visited {
+  color: inherit;
+}
+.card {
+  margin-bottom: 2em;
+}
+
+.feature {
+  background: transparent;
+  box-shadow: none;
+}
+
+.bring-to-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #stripStyle {
   text-decoration: none;
-  color: white;
 }
 
 video {
-  width: 70%;
-  height: 70%;
+  width: 100%;
+  height: 100%;
 }
 
-#video-container {
+/* #video-container {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.scroll {
-  height: 120vh;
-  overflow-y: auto;
-}
-
+} */
 #splash {
   background-image: url('../assets/background.jpg');
   background-size: contain;
   background-repeat: repeat;
   background-attachment: fixed;
   font-family: 'Nunito', sans-serif;
-  overflow: visible;
-  padding: 3em 10em 10em 10em;
-  margin-bottom: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
