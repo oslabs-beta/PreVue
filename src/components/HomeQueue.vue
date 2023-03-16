@@ -1,13 +1,6 @@
 <template>
   <!--the 'selected elements' that show HTML elements in the right sidebar-->
-  <v-card
-    class="home-queue"
-    :style="{
-      'background-color': '#565656',
-      'border-bottom': '0.5px solid #6a696a',
-      padding: '16px 0px 24px 0px'
-    }"
-  >
+  <v-card class="home-queue">
     <v-card-title
       :style="{
         'font-size': '14px',

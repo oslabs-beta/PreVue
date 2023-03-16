@@ -15,32 +15,32 @@
         <span class="white--text">Tree</span>
       </v-btn>
 
-      <SaveProjectComponent v-if="validUser"></SaveProjectComponent>
+      <!-- <SaveProjectComponent v-if="validUser"></SaveProjectComponent> -->
       <ExportProjectComponent></ExportProjectComponent>
-      <OpenProjectComponent
+      <!-- <OpenProjectComponent
         :key="rerenderKey"
         v-if="validUser"
       ></OpenProjectComponent>
-      <LogOutComponent v-if="validUser"></LogOutComponent>
+      <LogOutComponent v-if="validUser"></LogOutComponent> -->
     </div>
   </v-app-bar>
 </template>
 
 <script>
-import SaveProjectComponent from '@/components/SaveProjectComponent.vue';
-import OpenProjectComponent from '@/components/OpenProjectComponent.vue';
+// import SaveProjectComponent from '@/components/SaveProjectComponent.vue';
+// import OpenProjectComponent from '@/components/OpenProjectComponent.vue';
 import ExportProjectComponent from '@/components/ExportProjectComponent.vue';
-import LogOutComponent from './LogOutComponent.vue';
+// import LogOutComponent from './LogOutComponent.vue';
 
 export default {
   name: 'NavBar',
   props: ['route', 'imageURL'],
 
   components: {
-    SaveProjectComponent,
-    OpenProjectComponent,
-    LogOutComponent,
-    ExportProjectComponent
+    // SaveProjectComponent,
+    // OpenProjectComponent,
+    // LogOutComponent,
+    ExportProjectComponent,
   },
   methods: {
     // routing to homepage and tree view
@@ -49,7 +49,7 @@ export default {
     },
     routeTree() {
       this.$router.push({ path: '/tree' });
-    }
+    },
   },
   computed: {
     // checks if user is loggedin and conditonally renders save and open project buttons
@@ -60,9 +60,9 @@ export default {
     rerenderKey: {
       get() {
         return this.$store.state.rerenderKey;
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
 

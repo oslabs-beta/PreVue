@@ -6,7 +6,9 @@
           <h4 id="prevue-link">Try PreVue</h4>
         </div>
         <v-btn width="200px" color="success" class="mt-4" @click="oauth">
-          Sign in with GitHub
+          <a id="stripStyle" href="https://github.com/open-source-labs/PreVue"
+            >Github
+          </a>
         </v-btn>
       </div>
       <h1 id="prevue">PreVue</h1>
@@ -95,9 +97,7 @@
           If you ever need to save your current project, click the ‘Save
           Project’ icon to save it to PreVue’s database
         </li>
-        <li>
-          Click ‘Open Project’ to retrieve past projects
-        </li>
+        <li>Click ‘Open Project’ to retrieve past projects</li>
         <li>
           Once you're satisfied, click the export project icon to export your
           awesome project as new Vue application!
@@ -111,7 +111,7 @@
       <div id="authors">
         <div class="author">
           <h3>Jason Boo</h3>
-          <img src="" />
+          <img src="../assets/jason-photo.jpeg" />
           <div class="links">
             <h4><a href="https://github.com/jasonboo123">Github</a></h4>
             <h4>
@@ -141,7 +141,7 @@
         </div>
         <div class="author">
           <h3>Zach Pestaina</h3>
-          <img src="../assets/zach-photo.jpeg" />
+          <img src="../assets/zach-photo.jpg" height="160" />
           <div class="links">
             <h4><a href="https://github.com/zachpestaina">Github</a></h4>
             <h4>
@@ -162,9 +162,9 @@
           <div @click="toHome">
             <h4 id="prevue-link">Try PreVue</h4>
           </div>
-          <v-btn width="200px" color="white" class="mt-4" @click="oauth">
+          <!-- <v-btn width="200px" color="white" class="mt-4" @click="oauth">
             Sign in with GitHub
-          </v-btn>
+          </v-btn> -->
         </div>
       </div>
     </div>
@@ -175,32 +175,32 @@
 export default {
   name: 'Splash',
 
-  beforeCreate() {
-    fetch('/users/validateSession', {
-      credentials: 'include'
-      // headers: {
-      //   'Access-Control-Allow-Origin': ['localhost:4173']
-      // }
-    }).then(res => {
-      if (res.status === 200) {
-        this.toHome();
-      }
-    });
-  },
+  // beforeCreate() {
+  //   fetch('/users/validateSession', {
+  //     credentials: 'include',
+  //     // headers: {
+  //     //   'Access-Control-Allow-Origin': ['localhost:4173']
+  //     // }
+  //   }).then((res) => {
+  //     if (res.status === 200) {
+  //       this.toHome();
+  //     }
+  //   });
+  // },
   methods: {
-    oauth() {
-      // make request to endpoint, to be redirected in server
-      fetch('/users/oauth', {
-        method: 'GET',
-        redirect: 'follow'
+    // oauth() {
+    //   // make request to endpoint, to be redirected in server
+    //   fetch('/users/oauth', {
+    //     method: 'GET',
+    //     redirect: 'follow'
 
-        // headers: { 'Access-Control-Allow-Origin': ['localhost:4173'] }
-      })
-        .then(res => {
-          return res.json();
-        })
-        .then(data => window.location.replace(data));
-    },
+    //     // headers: { 'Access-Control-Allow-Origin': ['localhost:4173'] }
+    //   })
+    //     .then(res => {
+    //       return res.json();
+    //     })
+    //     .then(data => window.location.replace(data));
+    // },
 
     toHome() {
       this.$router.push('/home');
@@ -215,6 +215,11 @@ export default {
 html {
   height: 140vh;
   overflow-y: auto;
+}
+
+#stripStyle {
+  text-decoration: none;
+  color: white;
 }
 
 video {
