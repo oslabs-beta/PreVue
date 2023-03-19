@@ -36,6 +36,7 @@
     "mongodb-connection-string-url": "^2.6.0",
     "mongoose": "^6.10.0",
     "mousetrap": "^1.6.3",
+    "pg": "^8.10.0",
     "sass": "^1.58.3",
     "vue": "^3.2.47",
     "vue-multiselect": "^3.0.0-alpha.2",

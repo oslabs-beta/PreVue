@@ -40,6 +40,10 @@
   margin: 0.1em 0 0.35em 0;
 }
 
+#features-wrapper h2 {
+  font-size: 1.7em;
+}
+
 #banner p {
   font-size: 2.75em;
   line-height: 1.35em;

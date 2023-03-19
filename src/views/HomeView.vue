@@ -4,7 +4,7 @@
       <v-navigation-drawer
         id="side-nav"
         :style="{
-          'background-color': 'rgb(30, 31, 33)',
+          'background-color': 'rgb(30, 31, 33)'
         }"
         width="250"
         permanent
@@ -46,30 +46,30 @@ export default {
     HomeSidebar,
     HomeQueue,
     RouteDisplay,
-    ProjectTabs,
+    ProjectTabs
   },
-  // beforeMount() {
-  //   this.isLoggedIn();
-  // },
+  beforeMount() {
+    this.isLoggedIn();
+  },
   data() {},
   methods: {
     ...mapActions(['setLogin']),
-    // async isLoggedIn() {
-    //   const res = await fetch('/users/validateSession', {
-    //     method: 'GET',
-    //     credentials: 'include'
-    //     // headers: {
-    //     //   'Access-Control-Allow-Origin': ['localhost:8080']
-    //     // }
-    //   });
+    async isLoggedIn() {
+      const res = await fetch('/users/validateSession', {
+        method: 'GET',
+        credentials: 'include'
+        // headers: {
+        //   'Access-Control-Allow-Origin': ['localhost:8080']
+        // }
+      });
 
-    //   if (res.status === 200) {
-    //     this.setLogin(true);
-    //   } else {
-    //     this.setLogin(false);
-    //   }
-    // }
-  },
+      if (res.status === 200) {
+        this.setLogin(true);
+      } else {
+        this.setLogin(false);
+      }
+    }
+  }
 };
 </script>
 

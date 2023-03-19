@@ -9,7 +9,7 @@ projectRouter.post(
   '/saveProject',
   authController.authenticate,
   projectController.saveProject,
-  projectController.userQuery,
+  // projectController.userQuery,
   (req, res) => {
     return res.status(201).json(res.locals.user);
   }

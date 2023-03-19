@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <v-dialog transition="dialog-bottom-transition" width="300">
     <template v-slot:activator="{ props }">
       <v-btn v-bind="props" class="open-btn" id="button">
@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       selected: '',
-      projects: [],
+      projects: []
     };
   },
   methods: {
@@ -74,8 +74,8 @@ export default {
         body: JSON.stringify({ project_name: selected }),
         headers: {
           // 'Access-Control-Allow-Origin': ['localhost:8080'],
-          'Content-Type': 'application/json',
-        },
+          'Content-Type': 'application/json'
+        }
       });
       const data = await res.json();
 
@@ -85,13 +85,15 @@ export default {
     async getProjects() {
       // returns array of all projects associated with authenticated user from database and updates component state
       const res = await fetch('/users/userProjects', {
-        credentials: 'include',
+        credentials: 'include'
         // headers: { 'Access-Control-Allow-Origin': ['localhost:8080'] }
       });
       const data = await res.json();
-      this.projects = await data;
-    },
-  },
+      const cleanData = data.map(project => project.project_name);
+      // console.log(cleanData);
+      this.projects = await cleanData;
+    }
+  }
 };
 </script>
 
@@ -112,4 +114,4 @@ export default {
 #toolbar {
   color: white;
 }
-</style> -->
+</style>

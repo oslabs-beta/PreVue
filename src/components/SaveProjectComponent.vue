@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <v-dialog transition="dialog-bottom-transition" width="300">
     <template v-slot:activator="{ props }">
       <v-btn color="white" v-bind="props">
@@ -94,4 +94,4 @@ export default {
 #toolbar {
   color: white;
 }
-</style> -->
+</style>

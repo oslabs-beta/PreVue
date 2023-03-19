@@ -1,23 +1,36 @@
 <template>
   <div class="scroll">
     <div id="splash">
-      <div class="nav">
-        <div @click="toHome">Try PreVue</div>
-        <div @click="oauth">
-          <a id="stripStyle" href="https://github.com/open-source-labs/PreVue"
-            >Visit our GitHub repo
-          </a>
-        </div>
-      </div>
+      <v-app-bar style="background-color:  #39b982;"
+        ><v-app-bar-nav-icon
+          ><img
+            height="50"
+            src="../assets/prevue-large.png"
+            alt=""/></v-app-bar-nav-icon
+        ><v-app-bar-title
+          style="color: white; font-size: 2em; font-weight: 850; font-family: Nunito;"
+          >PreVue</v-app-bar-title
+        >
+        <v-btn
+          @click="toHome"
+          style="color: white; font-size: 1em; font-weight: 650; margin-right: 20px"
+          >Try PreVue</v-btn
+        >
+        <v-btn
+          @click="oauth"
+          style="color: white; font-size: 1em; font-weight: 650; margin-right: 15px"
+          >Log In</v-btn
+        ><v-app-bar-nav-icon style="margin-right: 15px;"
+          ><a href="https://github.com/open-source-labs/PreVue"
+            ><img height="25" src="../assets/github-mark-white.png" alt=""/></a
+        ></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon style="margin-right: 50px;"
+          ><a href="https://hub.docker.com/r/prevue/prevue-production"
+            ><i class="fab fa-docker icon fa-lg" style="color: white;"></i></a
+        ></v-app-bar-nav-icon>
+      </v-app-bar>
 
-      <div id="header-wrapper">
-        <header id="header" class="container">
-          <div id="logo">
-            <h1>PreVue</h1>
-          </div>
-        </header>
-      </div>
-      <div id="banner-wrapper">
+      <div id="banner-wrapper" style="margin-top: 2em;">
         <div id="banner" class="box container" style="padding: 3em;">
           <div class="row">
             <div class="col-5 col-12-medium">
@@ -43,44 +56,6 @@
         </div>
       </div>
 
-      <div
-        id="features-wrapper"
-        style="background-color: #fdfdfdcb; width: 100%; margin-top: 2em;"
-      >
-        <div class="container">
-          <div class="row card" style="justify-content: center;">
-            <div>
-              <section class="box feature">
-                <div class="inner">
-                  <header>
-                    <h2>
-                      PreVue allows users to conceptualize and visualize
-                      component architecture by allowing them to:
-                    </h2>
-                  </header>
-                  <ul>
-                    <li>
-                      Create components and preview their associated code
-                    </li>
-                    <li>Set up different routes and views</li>
-                    <li>
-                      Establish parent-child component relationships
-                    </li>
-                    <li>
-                      View application hierarchy in tree format
-                    </li>
-                    <li>
-                      Export the component architecture as a Vue application
-                      created with default Vite settings
-                    </li>
-                  </ul>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <br />
       <div class="border">
         <p>
@@ -91,107 +66,108 @@
         </p>
       </div>
       <br />
-      <h2>How to use:</h2>
       <div id="features-wrapper">
         <div class="container">
-          <div class="row card">
+          <div class="rowCard">
             <div class="col-6 col-12-medium">
-              <!-- Box -->
               <section class="box feature">
+                <a href="#" class="image featured"><img src="" alt=""/></a>
                 <div class="inner">
                   <header>
-                    <h2>Adding Components</h2>
+                    <h2><center>Adding Components</center></h2>
+                    <br />
                   </header>
                   <ul>
                     <li>
-                      Create components by entering a name and clicking the HTML
-                      elements you need
-                    </li>
-                    <li>Drag the elements to change their order</li>
-                    <li>
-                      Once you're satisfied, click the button to ‘add a
-                      component’ and it will show up in the working area
-                    </li>
-                    <li>
-                      Resize and move components to fit the design you have in
-                      mind
+                      Create components and populate them with HTML elements.
+                      Add routes that represent different views for your
+                      application. See your hierarchy in the tree view.
                     </li>
                   </ul>
                 </div>
               </section>
             </div>
+
             <div class="col-6 col-12-medium">
-              <!-- Box -->
               <section class="box feature">
+                <a href="#" class="image featured"><img src="" alt=""/></a>
+                <div class="inner">
+                  <video
+                    src="../assets/ComponentMp4.mp4"
+                    muted
+                    autoplay
+                    loop
+                  ></video>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="rowCard">
+            <div class="col-6 col-12-medium">
+              <section class="box feature">
+                <a href="#" class="image featured"><img src="" alt=""/></a>
+                <div class="inner">
+                  <video
+                    src="../assets/ModalMp4.mp4"
+                    muted
+                    autoplay
+                    loop
+                  ></video>
+                </div>
+              </section>
+            </div>
+
+            <div class="col-6 col-12-medium">
+              <section class="box feature">
+                <a href="#" class="image featured"><img src="" alt=""/></a>
                 <div class="inner">
                   <header>
-                    <h2>Editing Components</h2>
+                    <h2><center>Editing Components</center></h2>
+                    <br />
                   </header>
                   <ul>
-                    <li>Double click elements to bring up the modal view</li>
                     <li>
-                      Add additional elements to a component with a live preview
-                      of the component code
-                    </li>
-                    <li>
-                      Drag elements on the right side bar to nest elements
-                    </li>
-                    <li>
-                      Establish parent-child component relationships via the
-                      dropdown menu when creating or editing components
+                      Double click your components to open the modal view.
+                      Change the nesting of your HTML elements and create
+                      parent/child relationships.
                     </li>
                   </ul>
                 </div>
               </section>
             </div>
           </div>
-          <div class="row card">
+          <div class="rowCard">
             <div class="col-6 col-12-medium">
               <section class="box feature">
+                <a href="#" class="image featured"><img src="" alt=""/></a>
                 <div class="inner">
                   <header>
-                    <h2>Adding Components</h2>
+                    <h2>
+                      <center>Saving/Opening/Exporting Projects</center>
+                    </h2>
+                    <br />
                   </header>
                   <ul>
                     <li>
-                      Create components by entering a name and clicking the HTML
-                      elements you need
-                    </li>
-                    <li>Drag the elements to change their order</li>
-                    <li>
-                      Once you're satisfied, click the button to ‘add a
-                      component’ and it will show up in the working area
-                    </li>
-                    <li>
-                      Resize and move components to fit the design you have in
-                      mind
+                      Export your project as a fully functional Vue application.
+                      Sign in with GitHub to save projects and retrieve them
+                      later on.
                     </li>
                   </ul>
                 </div>
               </section>
             </div>
+
             <div class="col-6 col-12-medium">
-              <!-- Box -->
               <section class="box feature">
+                <a href="#" class="image featured"><img src="" alt=""/></a>
                 <div class="inner">
-                  <header>
-                    <h2>Adding Routes</h2>
-                  </header>
-                  <ul>
-                    <li>
-                      Create different routes that represent different Views for
-                      your app
-                    </li>
-                    <li>
-                      Any components created on a given route will be
-                      automatically saved to that route
-                    </li>
-                    <li>
-                      See a visual representation of your application’s
-                      hierarchy by clicking the ‘Tree’ icon in the navigation
-                      bar
-                    </li>
-                  </ul>
+                  <video
+                    src="../assets/SaveMp4.mp4"
+                    muted
+                    autoplay
+                    loop
+                  ></video>
                 </div>
               </section>
             </div>
@@ -205,55 +181,55 @@
       <br />
       <div id="dev-team-wrapper">
         <div class="container">
-          <div class="row">
-            <div class="col-3 col-6-small">
-              <section class="dev-team box feature">
-                <h5>Jason Boo</h5>
+          <div class="row ">
+            <div class="col-3 col-6-small ">
+              <section class="dev-team box feature profile">
+                <p class="teamMemberName">Jason Boo</p>
                 <img class="author" src="../assets/jason-photo.jpeg" alt="" />
-                <div class="userlinks">
-                  <a href="https://www.linkedin.com/in/jason-boo/">LinkedIn</a>
-                  <a href="https://github.com/jasonboo123">GitHub</a>
-                </div>
+                <AuthorButtons></AuthorButtons>
+                <!-- <div class="userlinks">
+                <a href="https://www.linkedin.com/in/jason-boo/">LinkedIn</a>
+                <a href="https://github.com/jasonboo123">GitHub</a>
+              </div> -->
               </section>
             </div>
-            <div class="col-3 col-6-small">
-              <section class="dev-team box feature">
-                <h5>Sean Flynn</h5>
+            <div class="col-3 col-6-small ">
+              <section class="dev-team box feature profile">
+                <p class="teamMemberName">Sean Flynn</p>
                 <img class="author" src="../assets/sean-photo.jpeg" alt="" />
-                <div class="userlinks">
-                  <a href="https://www.linkedin.com/in/sean-g-flynn/"
-                    >LinkedIn</a
-                  >
-                  <a href="http://github.com/seanflynn5">GitHub</a>
-                </div>
+                <AuthorButtons></AuthorButtons>
+                <!-- <div class="userlinks">
+                <a href="https://www.linkedin.com/in/sean-g-flynn/">LinkedIn</a>
+                <a href="http://github.com/seanflynn5">GitHub</a>
+              </div> -->
               </section>
             </div>
-            <div class="col-3 col-6-small">
-              <section class="dev-team box feature">
-                <h5>Robert Drake</h5>
+
+            <div class="col-3 col-6-small ">
+              <section class="dev-team box feature profile">
+                <p class="teamMemberName">Robert Drake</p>
                 <img class="author" src="../assets/robert-photo.jpeg" alt="" />
-                <div class="userlinks">
-                  <a href="https://www.linkedin.com/in/rmdrake8/">LinkedIn</a>
-                  <a href="https://github.com/rmdrake8">GitHub</a>
-                </div>
+                <AuthorButtons></AuthorButtons>
+                <!-- <div class="userlinks">
+                <a href="https://www.linkedin.com/in/rmdrake8/">LinkedIn</a>
+                <a href="https://github.com/rmdrake8">GitHub</a>
+              </div> -->
               </section>
             </div>
-            <div class="col-3 col-6-small">
-              <section class="dev-team box feature">
-                <h5>Zach Pestaina</h5>
+            <div class="col-3 col-6-small ">
+              <section class="dev-team box feature profile">
+                <p class="teamMemberName">Zach Pestaina</p>
                 <img class="author" src="../assets/zach-photo.jpeg" alt="" />
-                <div class="userlinks">
-                  <a href="https://www.linkedin.com/in/zachpestaina/"
-                    >LinkedIn</a
-                  >
-                  <a href="https://github.com/zachpestaina">GitHub</a>
-                </div>
+                <AuthorButtons></AuthorButtons>
+                <!-- <div class="userlinks">
+                <a href="https://www.linkedin.com/in/zachpestaina/">LinkedIn</a>
+                <a href="https://github.com/zachpestaina">GitHub</a>
+              </div> -->
               </section>
             </div>
           </div>
         </div>
       </div>
-
       <br />
       <h2>
         Please vist PreVue's
@@ -278,35 +254,39 @@
 </template>
 
 <script>
+import AuthorButtons from '../components/AuthorButtons.vue';
 export default {
   name: 'Splash',
+  components: {
+    AuthorButtons
+  },
 
-  // beforeCreate() {
-  //   fetch('/users/validateSession', {
-  //     credentials: 'include',
-  //     // headers: {
-  //     //   'Access-Control-Allow-Origin': ['localhost:4173']
-  //     // }
-  //   }).then((res) => {
-  //     if (res.status === 200) {
-  //       this.toHome();
-  //     }
-  //   });
-  // },
+  beforeCreate() {
+    fetch('/users/validateSession', {
+      credentials: 'include'
+      // headers: {
+      //   'Access-Control-Allow-Origin': ['localhost:4173']
+      // }
+    }).then(res => {
+      if (res.status === 200) {
+        this.toHome();
+      }
+    });
+  },
   methods: {
-    // oauth() {
-    //   // make request to endpoint, to be redirected in server
-    //   fetch('/users/oauth', {
-    //     method: 'GET',
-    //     redirect: 'follow'
+    oauth() {
+      // make request to endpoint, to be redirected in server
+      fetch('/users/oauth', {
+        method: 'GET',
+        redirect: 'follow'
 
-    //     // headers: { 'Access-Control-Allow-Origin': ['localhost:4173'] }
-    //   })
-    //     .then(res => {
-    //       return res.json();
-    //     })
-    //     .then(data => window.location.replace(data));
-    // },
+        // headers: { 'Access-Control-Allow-Origin': ['localhost:4173'] }
+      })
+        .then(res => {
+          return res.json();
+        })
+        .then(data => window.location.replace(data));
+    },
 
     toHome() {
       this.$router.push('/home');
@@ -318,14 +298,29 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 @import url('../assets/main.css');
-/* html {
-  height: 140vh;
-  overflow-y: auto;
-} */
+div.linkme:hover {
+  color: black;
+  cursor: pointer;
+}
 
-.nav {
+div.nav {
   display: flex;
-  margin-top: 2em;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section.box,
+li {
+  list-style: none;
+}
+
+a#striStyle {
+  text-decoration: none;
+  color: inherit;
+}
+
+a#striStyle:hover {
+  color: black;
 }
 
 .menu {
@@ -352,13 +347,22 @@ export default {
   font-size: 1.15em;
   color: rgb(103, 103, 103);
 }
-.nav > div:hover {
-  cursor: pointer;
-  color: black;
+
+#prevue:hover {
+  cursor: default;
 }
 
-#logo:hover {
-  cursor: default;
+#linkout {
+  display: flex;
+  align-items: center;
+}
+
+#linkout > div {
+  margin-left: 1em;
+}
+
+div.linkme {
+  margin-left: 0;
 }
 
 .nav > div > a {
@@ -372,15 +376,14 @@ export default {
   margin-bottom: 2em;
 }
 
-.feature {
-  background: transparent;
-  box-shadow: none;
-}
-
 .bring-to-center {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+video {
+  border-radius: 5px;
 }
 
 #stripStyle {
@@ -392,21 +395,22 @@ video {
   height: 100%;
 }
 
-/* #video-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 #splash {
   background-image: url('../assets/background.jpg');
-  background-size: contain;
-  background-repeat: repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center;
   font-family: 'Nunito', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.rowCard {
+  display: flex;
+  flex-direction: column;
 }
 
 #prevue {
@@ -415,14 +419,20 @@ video {
   font-weight: 700;
   font-size: 2.5em;
   color: #39b982;
+  /* background-color: #39b982; */
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
   text-decoration: none;
+  margin-bottom: 0.5em;
 }
 
 .border {
+  font-size: 1.2em;
   text-align: center;
   padding: 1em;
   color: white;
-  background-color: #39b982;
+  background-color: #36b47d;
   width: 100vw;
 }
 
@@ -442,15 +452,24 @@ video {
   flex-direction: column;
   margin: 0 10px 0 10px;
   align-items: center;
+  margin-bottom: 2em;
 }
 
-.author img {
+/* .author img {
   width: 10em;
   border-radius: 20%;
-}
+  margin-bottom: 2em;
+} */
 
 .links {
   display: flex;
+}
+
+.teamMemberName {
+  padding: 10px 0;
+  font-weight: 850;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.25em;
 }
 
 .links h4 {
@@ -477,4 +496,26 @@ video {
   justify-content: center;
   align-items: center;
 }
+
+.nav {
+  margin-top: 2em;
+}
+
+section.profile {
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+}
+
+section.profile:hover {
+  transform: scale(1.1);
+}
+
+/* .profile {
+  transition: all 0.3s;
+}
+
+.profile:hover {
+  transform: translateY(25px);
+} */
 </style>

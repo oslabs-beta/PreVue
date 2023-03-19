@@ -16,6 +16,8 @@ accountRouter.get(
   }
 );
 
+accountRouter;
+
 // retrieves specific user projects
 accountRouter.get(
   '/userProjects',
@@ -31,14 +33,14 @@ accountRouter.get(
   '/oauth/access_token/redirect',
   oAuthController.requestGitHubIdentity,
   oAuthController.queryGitHubAPIWithAccessToken,
-  accountController.createUser,
+  accountController.findUser,
   authController.sign,
   cookieController.setSSIDCookie,
   (req, res) => {
     console.log('after requestGitHUbIdentity'),
       console.log('res.locals.access_token', res.locals.access_token),
       console.log('final redirect to homepage');
-    res.redirect('/');
+    res.redirect('/home');
   }
 );
 
@@ -59,10 +61,16 @@ accountRouter.get('/logout', cookieController.deleteCookie, (req, res) => {
 // general route for querying to find all users in database
 accountRouter.get(
   '/find',
+  oAuthController.requestGitHubIdentity,
+  oAuthController.queryGitHubAPIWithAccessToken,
   accountController.findUser,
-  // oAuthController.requestGitHubIdentity,
+  authController.sign,
+  cookieController.setSSIDCookie,
   (req, res) => {
-    return res.status(200).json(res.locals.username);
+    console.log('after requestGitHUbIdentity'),
+      console.log('res.locals.access_token', res.locals.access_token),
+      console.log('final redirect to homepage');
+    res.redirect('/home');
   }
 );
 

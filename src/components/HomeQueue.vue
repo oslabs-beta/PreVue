@@ -4,7 +4,7 @@
     <v-card-title
       :style="{
         'font-size': '14px',
-        color: 'white',
+        // color: 'white',
         'font-weight': '700',
         padding: '0 24px 0 24px'
       }"
