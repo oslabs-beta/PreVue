@@ -1308,7 +1308,7 @@
 .box {
   background: #fdfdfdcb;
   border-radius: 6px;
-  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
+
   padding: 2em;
 }
 
@@ -1317,7 +1317,7 @@
 }
 
 .box.feature .inner {
-  padding: 4em 2em 3em 2em;
+  padding: 0em 2em 3em 2em;
 }
 
 .box.feature h2 {

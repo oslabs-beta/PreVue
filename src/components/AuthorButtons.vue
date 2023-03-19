@@ -9,17 +9,18 @@
 
     <ul>
       <li>
-        <a href="#"><i class="fab fa-github icon"></i></a>
+        <a :href="github"><i class="fab fa-github icon"></i></a>
       </li>
       <li>
-        <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
+        <a :href="linkedin"><i class="fab fa-linkedin-in icon"></i></a>
       </li>
     </ul>
   </div>
 </template>
 <script>
 export default {
-  name: 'AuthorButtons'
+  name: 'AuthorButtons',
+  props: ['github', 'linkedin']
 };
 </script>
 <style scoped>

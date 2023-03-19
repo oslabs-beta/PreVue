@@ -11,6 +11,7 @@
           style="color: white; font-size: 2em; font-weight: 850; font-family: Nunito;"
           >PreVue</v-app-bar-title
         >
+        <MenuComponent :oauth="oauth" :toHome="toHome"></MenuComponent>
         <v-btn
           @click="toHome"
           style="color: white; font-size: 1em; font-weight: 650; margin-right: 20px"
@@ -57,7 +58,7 @@
       </div>
 
       <br />
-      <div class="border">
+      <div class="border" style="margin-bottom: 1.5em;">
         <p>
           <strong>
             Use PreVue to create projects in single sessions or sign in with
@@ -65,12 +66,15 @@
           >
         </p>
       </div>
-      <br />
+
       <div id="features-wrapper">
         <div class="container">
-          <div class="rowCard">
-            <div class="col-6 col-12-medium">
-              <section class="box feature">
+          <div class="rowCard" style="background-color: white;">
+            <div class="col-6 col-12-medium" style="flex:40%">
+              <section
+                class="box feature"
+                style="background-color: transparent;"
+              >
                 <a href="#" class="image featured"><img src="" alt=""/></a>
                 <div class="inner">
                   <header>
@@ -88,7 +92,7 @@
               </section>
             </div>
 
-            <div class="col-6 col-12-medium">
+            <div class="col-6 col-12-medium" style="flex:60%">
               <section class="box feature">
                 <a href="#" class="image featured"><img src="" alt=""/></a>
                 <div class="inner">
@@ -102,9 +106,9 @@
               </section>
             </div>
           </div>
-          <div class="rowCard">
-            <div class="col-6 col-12-medium">
-              <section class="box feature">
+          <div class="rowCard" style="background: none">
+            <div class="col-6 col-12-medium" style="flex:60%">
+              <section class="box feature" style="background: none;">
                 <a href="#" class="image featured"><img src="" alt=""/></a>
                 <div class="inner">
                   <video
@@ -117,16 +121,18 @@
               </section>
             </div>
 
-            <div class="col-6 col-12-medium">
-              <section class="box feature">
+            <div class="col-6 col-12-medium" style="flex:40%">
+              <section class="box feature" style="background: none">
                 <a href="#" class="image featured"><img src="" alt=""/></a>
                 <div class="inner">
                   <header>
-                    <h2><center>Editing Components</center></h2>
+                    <h2 style="color: #39b982">
+                      <center>Editing Components</center>
+                    </h2>
                     <br />
                   </header>
                   <ul>
-                    <li>
+                    <li style="color: #39b982">
                       Double click your components to open the modal view.
                       Change the nesting of your HTML elements and create
                       parent/child relationships.
@@ -136,14 +142,14 @@
               </section>
             </div>
           </div>
-          <div class="rowCard">
-            <div class="col-6 col-12-medium">
+          <div class="rowCard" style="background-color: white;">
+            <div class="col-6 col-12-medium" style="flex: 40%">
               <section class="box feature">
                 <a href="#" class="image featured"><img src="" alt=""/></a>
                 <div class="inner">
                   <header>
                     <h2>
-                      <center>Saving/Opening/Exporting Projects</center>
+                      <center>Manage Projects</center>
                     </h2>
                     <br />
                   </header>
@@ -158,7 +164,7 @@
               </section>
             </div>
 
-            <div class="col-6 col-12-medium">
+            <div class="col-6 col-12-medium" style="flex: 60%">
               <section class="box feature">
                 <a href="#" class="image featured"><img src="" alt=""/></a>
                 <div class="inner">
@@ -186,7 +192,10 @@
               <section class="dev-team box feature profile">
                 <p class="teamMemberName">Jason Boo</p>
                 <img class="author" src="../assets/jason-photo.jpeg" alt="" />
-                <AuthorButtons></AuthorButtons>
+                <AuthorButtons
+                  github="https://github.com/jasonboo123"
+                  linkedin="https://www.linkedin.com/in/jason-boo/"
+                ></AuthorButtons>
                 <!-- <div class="userlinks">
                 <a href="https://www.linkedin.com/in/jason-boo/">LinkedIn</a>
                 <a href="https://github.com/jasonboo123">GitHub</a>
@@ -197,7 +206,10 @@
               <section class="dev-team box feature profile">
                 <p class="teamMemberName">Sean Flynn</p>
                 <img class="author" src="../assets/sean-photo.jpeg" alt="" />
-                <AuthorButtons></AuthorButtons>
+                <AuthorButtons
+                  github="http://github.com/seanflynn5"
+                  linkedin="https://www.linkedin.com/in/sean-g-flynn/"
+                ></AuthorButtons>
                 <!-- <div class="userlinks">
                 <a href="https://www.linkedin.com/in/sean-g-flynn/">LinkedIn</a>
                 <a href="http://github.com/seanflynn5">GitHub</a>
@@ -209,7 +221,10 @@
               <section class="dev-team box feature profile">
                 <p class="teamMemberName">Robert Drake</p>
                 <img class="author" src="../assets/robert-photo.jpeg" alt="" />
-                <AuthorButtons></AuthorButtons>
+                <AuthorButtons
+                  github="https://github.com/rmdrake8"
+                  linkedin="https://www.linkedin.com/in/rmdrake8/"
+                ></AuthorButtons>
                 <!-- <div class="userlinks">
                 <a href="https://www.linkedin.com/in/rmdrake8/">LinkedIn</a>
                 <a href="https://github.com/rmdrake8">GitHub</a>
@@ -220,7 +235,10 @@
               <section class="dev-team box feature profile">
                 <p class="teamMemberName">Zach Pestaina</p>
                 <img class="author" src="../assets/zach-photo.jpeg" alt="" />
-                <AuthorButtons></AuthorButtons>
+                <AuthorButtons
+                  github="https://github.com/zachpestaina"
+                  linkedin="https://www.linkedin.com/in/zachpestaina/"
+                ></AuthorButtons>
                 <!-- <div class="userlinks">
                 <a href="https://www.linkedin.com/in/zachpestaina/">LinkedIn</a>
                 <a href="https://github.com/zachpestaina">GitHub</a>
@@ -231,11 +249,12 @@
         </div>
       </div>
       <br />
-      <h2>
+      <div class="border-nostyle">
         Please vist PreVue's
         <a href="https://github.com/open-source-labs/PreVue">GitHub</a> if
         you're interested to learn how you can contribute!
-      </h2>
+      </div>
+
       <br />
       <div class="border">
         <div id="bottom-elements">
@@ -339,6 +358,15 @@ a#striStyle:hover {
   color: inherit;
 }
 
+.border-nostyle {
+  font-size: 1.2em;
+  text-align: center;
+  padding: 1em;
+  color: black;
+
+  width: 100vw;
+}
+
 .nav > div {
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
@@ -410,7 +438,10 @@ video {
 
 .rowCard {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
 }
 
 #prevue {
