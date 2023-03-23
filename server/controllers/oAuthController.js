@@ -2,11 +2,10 @@ require('dotenv').config();
 const axios = require('axios');
 
 const oAuthController = {};
-const GITHUB_OAUTH_CLIENT_ID = '2f0260d8014e87506756';
-const GITHUB_OAUTH_CLIENT_SECRET = '65e76abd0899dfeb248ff2eb001e5ec6e1c97fa6';
+const GITHUB_OAUTH_CLIENT_ID = process.env.GITHUB_OAUTH_CLIENT_ID;
+const GITHUB_OAUTH_CLIENT_SECRET = process.env.GITHUB_OAUTH_CLIENT_SECRET;
 const GITHUB_ACCESS_TOKEN_REQUEST_URL = `https://github.com/login/oauth/access_token`;
-const GITHUB_REDIRECT_URI =
-  'http://localhost:8080/users/oauth/access_token/redirect';
+const GITHUB_REDIRECT_URI = process.env.GITHUB_REDIRECT_URI;
 let str = GITHUB_OAUTH_CLIENT_ID.toString();
 let newStr = GITHUB_REDIRECT_URI.toString();
 
@@ -29,8 +28,8 @@ oAuthController.oAuthLogin = async (req, res, next) => {
       log: 'Error occurred in the oauthController.oAuthLogin middleware',
       status: 400, // bad request
       err: {
-        err: 'Error occurred in sending user to login to GitHub to login'
-      }
+        err: 'Error occurred in sending user to login to GitHub to login',
+      },
     });
   }
 };
@@ -45,12 +44,12 @@ oAuthController.requestGitHubIdentity = async (req, res, next) => {
       {
         client_id: GITHUB_OAUTH_CLIENT_ID,
         client_secret: GITHUB_OAUTH_CLIENT_SECRET,
-        code
+        code,
       },
       {
         headers: {
-          Accept: 'application/json'
-        }
+          Accept: 'application/json',
+        },
       }
     );
     console.log(data);
@@ -63,7 +62,7 @@ oAuthController.requestGitHubIdentity = async (req, res, next) => {
     return next({
       log: `Error occurred in the oauthController.requestGitHubIdentity middleware\n Error: ${error.message}`,
       status: 400, // bad request
-      err: { err: 'Error occurred in getting your Github user identity' }
+      err: { err: 'Error occurred in getting your Github user identity' },
     });
   }
 };
@@ -74,7 +73,7 @@ oAuthController.queryGitHubAPIWithAccessToken = async (req, res, next) => {
   try {
     const auth = res.locals.access_token;
     const { data } = await axios.get('https://api.github.com/user', {
-      headers: { Authorization: `Bearer ${auth}` }
+      headers: { Authorization: `Bearer ${auth}` },
     });
     console.log('response from the api');
     console.log(data);
@@ -82,7 +81,7 @@ oAuthController.queryGitHubAPIWithAccessToken = async (req, res, next) => {
     // set info from api to res.locals
     res.locals = {
       ...res.locals,
-      ...processGitHubData(data)
+      ...processGitHubData(data),
     };
 
     return next();
@@ -90,7 +89,7 @@ oAuthController.queryGitHubAPIWithAccessToken = async (req, res, next) => {
     return next({
       log: `Error occurred in the oauthController.queryGitHubAPIWithAccessToken middleware\n Error: ${error.message}`,
       status: 400, // bad request
-      err: { err: 'Error occurred in querying Github API with access token' }
+      err: { err: 'Error occurred in querying Github API with access token' },
     });
   }
 };
@@ -101,7 +100,7 @@ function processGitHubData(data) {
   // only works with two names
   return {
     username: login,
-    id: id
+    id: id,
   };
 }
 
