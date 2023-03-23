@@ -1,5 +1,5 @@
-const Project = require('../models/projectModels');
-const User = require('../models/accountModels');
+// const Project = require('../models/projectModels');
+// const User = require('../models/accountModels');
 const db = require('../models/dbmodel');
 const projectController = {};
 
@@ -132,19 +132,19 @@ projectController.getProject = async (req, res, next) => {
 };
 
 // general query to find all projects; not used in app itself
-projectController.findProject = (req, res, next) => {
-  Project.find({})
-    .then(data => {
-      res.locals.username = data;
-      return next();
-    })
-    .catch(err => {
-      // if (err.message === `Username Doesn't Exist`) res.redirect("/signup");
-      return next({
-        log: err,
-        error: `error found in userController.verifyUser`
-      });
-    });
-};
+// projectController.findProject = (req, res, next) => {
+//   Project.find({})
+//     .then(data => {
+//       res.locals.username = data;
+//       return next();
+//     })
+//     .catch(err => {
+//       // if (err.message === `Username Doesn't Exist`) res.redirect("/signup");
+//       return next({
+//         log: err,
+//         error: `error found in userController.verifyUser`
+//       });
+//     });
+// };
 
 module.exports = projectController;

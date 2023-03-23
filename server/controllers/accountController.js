@@ -1,32 +1,32 @@
-const Users = require('../models/accountModels');
+// const Users = require('../models/accountModels');
 const db = require('../models/dbmodel');
 const accountController = {};
 
 // enters a user into the database after GitHub OAuth if an entry
 // does not already exist
-accountController.createUser = (req, res, next) => {
-  const { username, id } = res.locals;
+// accountController.createUser = (req, res, next) => {
+//   const { username, id } = res.locals;
 
-  //Making sure username does not exist
-  Users.findOne({ username })
-    .then(data => {
-      if (!data) {
-        Users.create({ username, id }).then(data => {
-          //data here is full entry, includes _id key
-          res.locals.id = data._id; // sending ID for cookie auth
-          return next();
-        });
-      } else {
-        return next();
-      }
-    })
-    .catch(err => {
-      next({
-        log: `accountController.createUser failed: ${err}`,
-        message: `User already exists!`
-      });
-    });
-};
+//   //Making sure username does not exist
+//   Users.findOne({ username })
+//     .then(data => {
+//       if (!data) {
+//         Users.create({ username, id }).then(data => {
+//           //data here is full entry, includes _id key
+//           res.locals.id = data._id; // sending ID for cookie auth
+//           return next();
+//         });
+//       } else {
+//         return next();
+//       }
+//     })
+//     .catch(err => {
+//       next({
+//         log: `accountController.createUser failed: ${err}`,
+//         message: `User already exists!`
+//       });
+//     });
+// };
 
 // showing the logged in user's projects before the mounting
 // of the home page

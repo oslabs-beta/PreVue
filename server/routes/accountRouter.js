@@ -16,8 +16,6 @@ accountRouter.get(
   }
 );
 
-accountRouter;
-
 // retrieves specific user projects
 accountRouter.get(
   '/userProjects',

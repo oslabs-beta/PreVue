@@ -26,15 +26,15 @@ projectRouter.post(
 );
 
 // used to test Supertest functionality; not used in actual app
-projectRouter.get(
-  '/find',
-  projectController.findProject,
-  // oAuthController.requestGitHubIdentity,
-  (req, res) => {
-    return res
-      .status(200)
-      .json({ hello: test, 'res.locals.usename': res.locals.username });
-  }
-);
+// projectRouter.get(
+//   '/find',
+//   projectController.findProject,
+//   // oAuthController.requestGitHubIdentity,
+//   (req, res) => {
+//     return res
+//       .status(200)
+//       .json({ hello: test, 'res.locals.usename': res.locals.username });
+//   }
+// );
 
 module.exports = projectRouter;
