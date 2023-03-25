@@ -53,7 +53,7 @@ oAuthController.requestGitHubIdentity = async (req, res, next) => {
         }
       }
     );
-    console.log(data);
+    console.log('data', data);
 
     // if all's good, attach access_token to res.locals and move on!
     res.locals.access_token = data.access_token;

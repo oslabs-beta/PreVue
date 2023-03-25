@@ -42,6 +42,7 @@ accountController.userProjects = async (req, res, next) => {
 
       res.locals.userProjects = projects.rows;
       console.log(projects.rows);
+      return next();
     }
 
     return next();
@@ -63,20 +64,22 @@ accountController.userProjects = async (req, res, next) => {
   //   });
 };
 
-// just for test purposes; returns all users in the database
+// just for test purposes; returns all users in the databasenpm run serve
 accountController.findUser = async (req, res, next) => {
   try {
     const { username, id } = res.locals;
-    console.log(res.locals);
+    console.log('test', res.locals);
     const user = await db.query(
       `SELECT * FROM userSchema WHERE username='${username}'`
     );
 
     if (user.rows.length === 0) {
       const newUser = await db.query(
-        `INSERT INTO userSchema (username, user_id) VALUES('${username}', '${id}')`
+        `INSERT INTO userSchema (username, user_id) VALUES('${username}', '${id}') RETURNING *`
       );
+      console.log('newUser', newUser);
       res.locals.id = newUser.rows[0].id;
+      return next();
     }
 
     return next();
